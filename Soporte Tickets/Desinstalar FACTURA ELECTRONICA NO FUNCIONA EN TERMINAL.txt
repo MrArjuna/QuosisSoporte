@@ -1,0 +1,15 @@
+1. Respaldar empresa.
+ 2. Desinstalar el sistema de Factura Electrónica y AppKeyLicenseServer desde el panel de Control
+ 3. Ir a la ruta C:\Archivos de programa (x86)\Compacw y eliminar la carpeta de Facturacion
+ 4. Ir a la ruta  C:\Program Files (x86)\Compac\Servidor de Licencias y eliminar la carpeta de Facturacion
+ 5. Ir a la ruta C:\Users\(USUARIO DE WINDOWS)\AppData\Local\Temp y borrar los temporales
+ 6. Ir al regedit a la ruta HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\ y borrar la llave correspondiente al sistema, ejemplo:
+ FACTURA ELECTRONICA:
+ {2BE30865-34B9-418C-84F3-2C9912C2E31E}
+ APPKEY LICENSE SERVER:
+ {E3EA8E69-BE2E-4848-BD96-01E46014DC59}
+ 8. Ir a la ruta C:\Program Files (x86)\InstallShield Installation Information y borrar la misma llave que se eliminó en el regedit
+ 9. Reiniciar el equipo
+ 10. Reinstalar el sistema ejecutando como administrador
+ 11. Validar
+

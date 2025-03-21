@@ -1,0 +1,17 @@
+INSTALACION DE FACTURAS, PROBLEMAS UNG. 
+
+SE CAMBIA
+
+Directorio de Datos
+
+Directorio de FormasSP
+
+Directorio de Reportes
+
+DirectorioRepositorio
+
+Nombredeservidor
+
+Tipo instalacion 3 = TERMINAL   2 = Servidor   Monousuario = 1 
+
+SE AGREGA PERMISO DE TODOS A FACTURAS.EXE y COMPACW (x86).

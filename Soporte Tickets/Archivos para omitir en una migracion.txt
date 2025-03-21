@@ -1,0 +1,16 @@
+ADD CATALAGOS
+
+DBdirectory (Si se soloco en la instancia, sino si se pasa)
+
+Generales SQL
+
+Master
+
+Master Log
+
+Model hasta MSDBLOG
+
+Cosas con iconos
+
+Temp 
+Temp Log 

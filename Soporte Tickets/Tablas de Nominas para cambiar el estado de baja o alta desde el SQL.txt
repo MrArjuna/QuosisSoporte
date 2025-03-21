@@ -1,0 +1,17 @@
+
+-Como Cambiar El Estado de Baja de Un Empleado por medio del SQL.
+
+
+-Tabla - Noom 10001 - Validar que la letra sea A, estado, Fecha Baja,
+
+
+-10020, Por medio del ID del Empleado, Baja Reingreso, Validar que no este la letra B.
+
+
+-se toma el ID del Empleado, 10034, por medio del ID del Empleado, estado Empleado
+se coloca A.
+
+
+-Reconstruccion del Empleado
+
+Herramientas, utilerias, reconsturccion empleado, seleccionar las 3 primeras.

@@ -1,0 +1,7 @@
+Aguinaldo
+
+((15 + Empleado[Campo extra Numerico 1] )* Empleado[Salario diario] ) / 24
+
+
+Vacaciones
+(Antiguedades.Dias_vac_conf{VAntiguedad} + Empleado[Campo extra Numerico 1]) * Empleado[Salario diario] / 24

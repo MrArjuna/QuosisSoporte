@@ -1,0 +1,106 @@
+// Reporte:     VENTAS DIARIAS(CORTE DE CAJA)
+//
+// Sistema:     CONTPAQi Comercial Premium
+//
+// Descripción: Imprime las ventas y devoluciones diarias de la empresa
+
+
+
+// Parámetros de línea de comando
+// *****************************************************************************
+gServidor   = @parametroConsola('Servidor')
+gInstancia  = @parametroConsola('Instancia')
+gUsuarioSQL = @parametroConsola('NombreUsuario')
+gClaveSQL   = @parametroConsola('Clave')
+
+// *****************************************************************************
+// Empresa y Tablas a utilizar (Buscar en Management las tablas y las columnas.)
+// *****************************************************************************
+Conexion tEmpresa = Conexion.crear('jdbc:jtds:sqlserver:' & gServidor & ';instance=' & gInstancia,gUsuarioSQL,gClaveSQL)
+
+Consulta tDescripcion = tEmpresa['select cdescripcion,ciddocumentode from admDocumentosModelo']
+// ****************************************************************************
+
+// Parámetros del reporte (Ventana Principal)
+// ****************************************************************************
+Parametros
+  Titulo 'Documento'
+  Pagina '&1 Selecciona el Documento'
+
+
+    Parametro pFecha = @Hoy( ) Captura
+      Titulo  '&Fecha:'
+      Ayuda   ''
+      Control CtrlFecha
+    FinCaptura
+    
+		Parametro vacio = 0 Captura
+			Control CtrlVacio
+		FinCaptura
+    
+    Parametro pIdConcepto = 0 Captura
+      Titulo 'Selecciona el Documento :'
+      Control CtrlOpcion
+      Datos
+          Origen tDescripcion('cdescripcion'); tDescripcion('ciddocumentode')
+          OrdenaPor tDescripcion('cdescripcion')
+      FinDatos
+    FinCaptura
+   
+  FinPagina
+FinParametros
+//  Librerías usadas
+// *****************************************************************************
+Incluye LibAdminpaq.rpt
+Incluye LibParametros.rpt
+
+// *****************************************************************************
+// Sección de impresión (lo que se mostrará en el reporte) Altura sirve para tamaño de letra.
+// *****************************************************************************
+	
+
+	// *****************************************************************************
+// Sección de impresión (lo que se mostrará en el reporte)
+// *****************************************************************************
+	Altura 14
+	Columnas 3; 7,7.5
+	vMiVariable[0] = ''
+	vMiVariable[1] ='N° de Documento'
+	vMiVariable[2] ='FechadeTimbrado'
+	Lista vMiVariable
+	
+// *****************************************************************************
+//Tambien sirve para colocar texto.
+	Texto C3;12
+	Texto C1;'Del'
+	Texto C0;'Total'
+	Texto C2;'Periodo'
+	Imprime
+
+
+//Funcion para colocar Texto.
+DefFunc fEncabColumnas()
+	Negritas true
+	Altura 14
+
+	Texto 7; 'N° de Documento'
+	Texto 1; ' '
+	Texto 15; 'Fecha de Timbrado'
+	
+  	Imprime
+	Negritas False
+	FinFunc
+	
+	fEncabColumnas()
+	Imprime 
+
+// *****************************************************************************
+// Salto de linea (ENTER)
+	lRenglon = " "
+	Imprime lRenglon	
+
+Mientras Parametro vacio > Encontro
+Continua
+FinSi
+Parametro vacio <= 0
+FinMientras

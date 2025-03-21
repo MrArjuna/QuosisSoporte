@@ -1,0 +1,6 @@
+1. Cerrar el sistema en servidor y terminales.
+2. Tomar la IP del servidor.
+3. Validar que al realizar un PING entre servidor y terminal los equipos si se ven.
+4. Desde el servidor. Respaldar los archivos que componen la tabla de Listado de Empresas, la tabla MGW0001, que se ubica en la ruta: C:\Compacw\Empresas.
+5. Utilizando Visual Fox Pro, abrir la tabla original MGW0001.
+6. Reemplazar en los registros de cada empresa los campos CRutaDatos y CRutaRes01 que indican el  nombre del servidor y en su lugar declarar la IP tomada en el paso 2. Ejemplo:
